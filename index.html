@@ -8,258 +8,18 @@
     <meta name="keywords" content="Ankit Savaliya, Android Developer, Flutter, Web Developer, Python, Portfolio">
     <meta name="author" content="Ankit Savaliya">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background: linear-gradient(45deg, #0a192f, #172a45);
-            color: #8892b0;
-        }
-
-        /* ===== Navbar Styles ===== */
-        .navbar {
-            position: fixed;
-            width: 100%;
-            padding: 15px 0;
-            background: rgba(10, 25, 47, 0.85);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-        }
-
-        .nav-links {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            list-style: none;
-            transition: transform 0.3s ease;
-        }
-
-        .navbar a {
-            color: #64ffda;
-            text-decoration: none;
-            font-size: 18px;
-            transition: all 0.3s ease;
-        }
-
-        .navbar a:hover,
-        .navbar a.active {
-            color: #fff;
-            text-shadow: 0 0 10px #64ffda;
-        }
-
-        .hamburger {
-            display: none;
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            color: #64ffda;
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        /* ===== Hero Section ===== */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-        }
-
-        .hero-content {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-            width: 100%;
-        }
-
-        .profile-img {
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 3px solid #64ffda;
-            object-fit: cover;
-        }
-
-        .hero h1 {
-            color: #ccd6f6;
-            font-size: 4rem;
-            margin-bottom: 20px;
-        }
-
-        .typewriter {
-            color: #64ffda;
-            font-size: 2.5rem;
-            margin-bottom: 30px;
-            border-right: 2px solid #64ffda;
-            white-space: nowrap;
-            overflow: hidden;
-            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
-        }
-
-        /* ===== About Section ===== */
-        .about-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .skill {
-            background: #64ffda;
-            color: #0a192f;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 500;
-        }
-
-        .resume-btn {
-            display: inline-block;
-            background: #64ffda;
-            color: #0a192f;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: all 0.3s ease;
-        }
-
-        .resume-btn:hover {
-            background: #53e6c5;
-        }
-
-        /* ===== Projects Section ===== */
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .project-card {
-            background: rgba(23, 42, 69, 0.5);
-            padding: 30px;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 15px;
-        }
-
-        .project-links {
-            margin-top: 15px;
-            display: flex;
-            gap: 15px;
-        }
-
-        .project-links a {
-            color: #64ffda;
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: opacity 0.3s ease;
-        }
-
-        .project-links a:hover {
-            opacity: 0.8;
-        }
-
-        /* ===== Contact Section ===== */
-        .contact-links {
-            display: flex;
-            gap: 30px;
-            margin-top: 40px;
-        }
-
-        .contact-links a {
-            color: #64ffda;
-            font-size: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-
-        .contact-links a:hover {
-            transform: translateY(-5px);
-        }
-
-        /* ===== Animations ===== */
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
-
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #64ffda }
-        }
-
-        /* ===== Media Queries ===== */
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 60px;
-                right: -100%;
-                flex-direction: column;
-                background: rgba(10, 25, 47, 0.95);
-                padding: 20px;
-                border-radius: 8px;
-                gap: 15px;
-                width: 200px;
-            }
-
-            .nav-links.active {
-                right: 20px;
-            }
-
-            .hero h1 {
-                font-size: 3rem;
-            }
-
-            .typewriter {
-                font-size: 1.5rem;
-            }
-
-            .hero-content {
-                flex-direction: column;
-            }
-
-            .profile-img {
-                width: 200px;
-                height: 200px;
-            }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Loading Animation -->
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Navbar -->
     <nav class="navbar">
-        <i class="hamburger fas fa-bars"></i>
+        <i class="hamburger fas fa-bars" aria-label="Toggle navigation" aria-expanded="false"></i>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -268,20 +28,20 @@
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div>
                 <h1>Hi, I'm Ankit Savaliya</h1>
                 <div class="typewriter" id="typewriter"></div>
                 <p>A passionate 2nd year Computer Engineering student specializing in app and web development.</p>
+                <a href="#projects" class="cta-btn">View My Work</a>
             </div>
-            <img src="https://drive.google.com/uc?export=view&id=1VTdo96tMY9eFsMZFULW7pYiVo_3r7dOk" 
-                 alt="Ankit Savaliya" 
-                 class="profile-img"
-                 loading="lazy">
+            <img src="assets/profile.jpg" alt="Ankit Savaliya" class="profile-img" loading="lazy">
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
         <div class="about-content">
@@ -301,11 +61,12 @@
         </div>
     </section>
 
+    <!-- Projects Section -->
     <section id="projects">
         <h2>Featured Projects</h2>
         <div class="projects">
             <div class="project-card">
-                <img src="inotes-preview.jpg" alt="iNotes Preview" class="project-image" loading="lazy">
+                <img src="assets/inotes-preview.jpg" alt="iNotes Preview" class="project-image" loading="lazy">
                 <h3>iNotes</h3>
                 <p>A full-stack notes application featuring:</p>
                 <ul>
@@ -320,7 +81,7 @@
                 </div>
             </div>
             <div class="project-card">
-                <img src="iquotes-preview.jpg" alt="iQuotes Preview" class="project-image" loading="lazy">
+                <img src="assets/iquotes-preview.jpg" alt="iQuotes Preview" class="project-image" loading="lazy">
                 <h3>iQuotes</h3>
                 <p>A dynamic quotes application with:</p>
                 <ul>
@@ -337,69 +98,21 @@
         </div>
     </section>
 
-    <script>
-        // Enhanced Typewriter Effect
-        const roles = ["Android App Developer", "Flutter Developer", "Web Developer", "Python Developer"];
-        let roleIndex = 0;
-        let charIndex = 0;
-        const typewriterElement = document.getElementById('typewriter');
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2023 Ankit Savaliya. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </footer>
 
-        function typeWriter() {
-            if (charIndex < roles[roleIndex].length) {
-                typewriterElement.innerHTML += roles[roleIndex].charAt(charIndex);
-                charIndex++;
-                setTimeout(typeWriter, 100);
-            } else {
-                setTimeout(partialErase, 2000);
-            }
-        }
+    <!-- Back to Top Button -->
+    <button id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-        function partialErase() {
-            if (charIndex > roles[roleIndex].length - 5) {
-                typewriterElement.innerHTML = roles[roleIndex].substring(0, charIndex - 1);
-                charIndex--;
-                setTimeout(partialErase, 50);
-            } else {
-                roleIndex = (roleIndex + 1) % roles.length;
-                setTimeout(typeWriter, 500);
-            }
-        }
-
-        typeWriter();
-
-        // Active Section Observer
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (#${entry.target.id} === link.getAttribute('href')) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        }, { threshold: 0.5 });
-
-        sections.forEach(section => observer.observe(section));
-
-        // Hamburger Menu
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-links');
-
-        hamburger.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-        });
-
-        // Close menu on click outside
-        document.addEventListener('click', (e) => {
-            if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
-                navMenu.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
