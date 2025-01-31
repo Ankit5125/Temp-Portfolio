@@ -102,11 +102,11 @@ body {
 }
 
 .profile-img {
-    width: 300px;
-    height: 300px;
+    width: 600px; /* Double the original 300px */
+    height: 600px; /* Double the original 300px */
     border-radius: 50%;
-    border: 3px solid #64ffda;
     object-fit: cover;
+    border: none; /* Remove the border */
 }
 
 .hero h1 {
