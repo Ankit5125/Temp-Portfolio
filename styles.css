@@ -102,8 +102,8 @@ body {
 }
 
 .profile-img {
-    width: 600px; /* Double the original 300px */
-    height: 600px; /* Double the original 300px */
+    width: 600px; /* Double the original size */
+    height: 600px; /* Double the original size */
     border-radius: 50%;
     object-fit: cover;
     border: none; /* Remove the border */
@@ -309,7 +309,7 @@ footer {
     }
 
     .profile-img {
-        width: 200px;
-        height: 200px;
+        width: 300px;
+        height: 300px;
     }
 }
